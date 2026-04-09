@@ -117,6 +117,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="tinted" title="Previous"/>
+                                                        <connections>
+                                                            <action selector="previousTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tDn-qT-2lP"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-7R-svE">
                                                         <rect key="frame" x="247.66666666666666" y="0.0" width="89.666666666666657" height="34.333333333333336"/>

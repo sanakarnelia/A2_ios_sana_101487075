@@ -76,5 +76,11 @@ class ViewController: UIViewController,UISearchBarDelegate {
 
         try? context.save()
     }
+    @IBAction func previousTapped(_ sender: UIButton) {
+        if currentIndex > 0 {
+            currentIndex -= 1
+            displayProduct()
+        }
+    }
 }
 
