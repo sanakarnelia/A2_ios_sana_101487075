@@ -43,6 +43,16 @@ class ViewController: UIViewController,UISearchBarDelegate {
            
     }
 
+    func displayProduct() {
+        if filteredProducts.isEmpty { return }
+
+        let product = filteredProducts[currentIndex]
+
+        nameLabel.text = product.productName
+        descLabel.text = product.productDescription
+        priceLabel.text = "Price: $\(product.productPrice)"
+        providerLabel.text = "Provider: \(product.productProvider ?? "")"
+    }
 
 }
 
