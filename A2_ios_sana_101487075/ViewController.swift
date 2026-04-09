@@ -54,5 +54,27 @@ class ViewController: UIViewController,UISearchBarDelegate {
         providerLabel.text = "Provider: \(product.productProvider ?? "")"
     }
 
+    func fetchProducts() {
+        let request: NSFetchRequest<Product> = Product.fetchRequest()
+
+        do {
+            products = try context.fetch(request)
+        } catch {
+            print("Error fetching")
+        }
+    }
+
+    func addDefaultProducts() {
+        for i in 1...10 {
+            let newProduct = Product(context: context)
+            newProduct.productID = Int64(i)
+            newProduct.productName = "Product \(i)"
+            newProduct.productDescription = "Description \(i)"
+            newProduct.productPrice = Double(i * 10)
+            newProduct.productProvider = "Provider \(i)"
+        }
+
+        try? context.save()
+    }
 }
 
