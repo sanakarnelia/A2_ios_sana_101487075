@@ -151,6 +151,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add Product"/>
+                                <connections>
+                                    <segue destination="dw4-tV-4N3" kind="show" id="v6S-JU-uiR"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="NA8-Wa-7ak">
@@ -184,7 +187,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="Zot-Xj-6e9">
-                                <rect key="frame" x="10" y="178" width="373" height="419"/>
+                                <rect key="frame" x="10" y="232" width="373" height="419"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Product" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mg9-VI-udF">
                                         <rect key="frame" x="0.0" y="0.0" width="150.33333333333334" height="33.666666666666664"/>
@@ -217,7 +220,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Product Provider" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOZ-7M-pdS">
-                                                        <rect key="frame" x="0.0" y="220.66666666666663" width="128" height="20.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="220.66666666666669" width="128" height="20.333333333333343"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -243,7 +246,7 @@
                                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter provider" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8d5-V5-6Br">
-                                                        <rect key="frame" x="0.0" y="207" width="119" height="34"/>
+                                                        <rect key="frame" x="0.0" y="206.99999999999994" width="119" height="34"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -255,6 +258,9 @@
                                         <rect key="frame" x="0.0" y="384.66666666666663" width="54.666666666666664" height="34.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Add"/>
+                                        <connections>
+                                            <action selector="saveTapped:" destination="dw4-tV-4N3" eventType="touchUpInside" id="hKa-WK-bRj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -267,6 +273,13 @@
                             <constraint firstItem="XqZ-PZ-tIl" firstAttribute="trailing" secondItem="Zot-Xj-6e9" secondAttribute="trailing" constant="10" id="z7l-Bg-cQ4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pWW-bF-yph"/>
+                    <connections>
+                        <outlet property="descField" destination="Na7-3q-Koa" id="Z46-tC-gVN"/>
+                        <outlet property="nameField" destination="Wri-1Z-DWb" id="mzD-QT-Usm"/>
+                        <outlet property="priceField" destination="Dcn-iT-Mq4" id="GH3-tH-BHs"/>
+                        <outlet property="providerField" destination="8d5-V5-6Br" id="56P-jF-kKL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5w-Gq-DgE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
