@@ -88,5 +88,19 @@ class ViewController: UIViewController,UISearchBarDelegate {
             displayProduct()
         }
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+
+            if searchText.isEmpty {
+                filteredProducts = products
+            } else {
+                filteredProducts = products.filter {
+                    $0.productName!.lowercased().contains(searchText.lowercased()) ||
+                    $0.productDescription!.lowercased().contains(searchText.lowercased())
+                }
+            }
+
+            currentIndex = 0
+            displayProduct()
+        }
 }
 
