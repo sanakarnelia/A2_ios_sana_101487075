@@ -82,5 +82,11 @@ class ViewController: UIViewController,UISearchBarDelegate {
             displayProduct()
         }
     }
+    @IBAction func nextTapped(_ sender: UIButton) {
+        if currentIndex < filteredProducts.count - 1 {
+            currentIndex += 1
+            displayProduct()
+        }
+    }
 }
 

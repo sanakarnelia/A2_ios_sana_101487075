@@ -125,6 +125,9 @@
                                                         <rect key="frame" x="247.66666666666666" y="0.0" width="89.666666666666657" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="tinted" title="Next"/>
+                                                        <connections>
+                                                            <action selector="nextTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="48f-aQ-pHZ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
