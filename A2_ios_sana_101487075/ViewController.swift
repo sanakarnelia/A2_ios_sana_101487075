@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UISearchBarDelegate {
     
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -27,6 +27,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        super.viewDidLoad()
+
+            searchBar.delegate = self
+
+            fetchProducts()
+
+            if products.isEmpty {
+                addDefaultProducts()
+                fetchProducts()
+            }
+
+            filteredProducts = products
+            displayProduct()
+           
     }
 
 
