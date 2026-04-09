@@ -25,8 +25,7 @@ class ViewController: UIViewController,UISearchBarDelegate {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+      
         super.viewDidLoad()
 
             searchBar.delegate = self
@@ -41,8 +40,21 @@ class ViewController: UIViewController,UISearchBarDelegate {
             filteredProducts = products
             displayProduct()
            
+    
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        fetchProducts()
+        filteredProducts = products
+
+        if currentIndex >= filteredProducts.count {
+            currentIndex = filteredProducts.count - 1
+        }
+
+        displayProduct()
+    }
     func displayProduct() {
         if filteredProducts.isEmpty { return }
 
@@ -50,8 +62,8 @@ class ViewController: UIViewController,UISearchBarDelegate {
         idLabel.text = "\(product.productID)"
         nameLabel.text = product.productName
         descLabel.text = product.productDescription
-        priceLabel.text = "Price: $\(product.productPrice)"
-        providerLabel.text = "Provider: \(product.productProvider ?? "")"
+        priceLabel.text = " $\(product.productPrice)"
+        providerLabel.text = " \(product.productProvider ?? "")"
     }
 
     func fetchProducts() {

@@ -22,18 +22,30 @@ class AddProductViewController: UIViewController {
     
     @IBAction func saveTapped(_ sender: UIButton) {
         
-        let newProduct = Product(context: context)
-        newProduct.productID = Int64.random(in: 100...999)
-        newProduct.productName = nameField.text
-        newProduct.productDescription = descField.text
-        newProduct.productPrice = Double(priceField.text ?? "") ?? 0
-        newProduct.productProvider = providerField.text
-        
-        do {
-            try context.save()
-            navigationController?.popViewController(animated: true)
-        } catch {
-            print("Error saving")
-        }
+        guard let name = nameField.text, !name.isEmpty,
+                 let desc = descField.text, !desc.isEmpty,
+                 let priceText = priceField.text, let price = Double(priceText),
+                 let provider = providerField.text, !provider.isEmpty else {
+
+               print("Missing fields")
+               return
+           }
+
+           let newProduct = Product(context: context)
+           newProduct.productID = Int64.random(in: 100...999)
+           newProduct.productName = name
+           newProduct.productDescription = desc
+           newProduct.productPrice = price
+           newProduct.productProvider = provider
+
+           do {
+               try context.save()
+               print("Saved successfully") 
+               navigationController?.popViewController(animated: true)
+           } catch {
+               print("Error saving: \(error)")
+           }
+       }
+    
     }
-}
+

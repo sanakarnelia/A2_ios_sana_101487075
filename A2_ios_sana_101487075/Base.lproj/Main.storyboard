@@ -152,7 +152,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Add Product"/>
                                 <connections>
-                                    <segue destination="dw4-tV-4N3" kind="show" id="v6S-JU-uiR"/>
+                                    <segue destination="dw4-tV-4N3" kind="show" id="lFc-mL-YpX"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -181,7 +181,7 @@
         <!--Add Product View Controller-->
         <scene sceneID="vSd-ix-wT1">
             <objects>
-                <viewController id="dw4-tV-4N3" customClass="AddProductViewController" sceneMemberID="viewController">
+                <viewController id="dw4-tV-4N3" customClass="AddProductViewController" customModule="A2_ios_sana_101487075" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kJ3-eB-1JY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
